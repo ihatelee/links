@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT YOUR PAGE HERE — this is the only part you need to touch.
+     Change the text between the quotes, add or remove links,
+     save the file, and re-upload it to your host. That's it.
+     ============================================================ -->
+<script>
+const PAGE = {
+  name: "Emma Nicole Photography",
+  tagline: "Wedding and elopement photographer for the wild and the wildly in love.",
+
+  // Your profile photo. Put a file named "profile.jpg" next to this
+  // file, or paste a full image URL here instead.
+  photo: "profile.jpg",
+
+  // Your links. Copy a line to add one, delete a line to remove one.
+  links: [
+    { label: "Home",           url: "https://www.emmanicolephotos.com/?utm_source=links-page&utm_medium=referral" },
+    { label: "Contact",        url: "https://www.emmanicolephotos.com/contact?utm_source=links-page&utm_medium=referral" },
+    { label: "Blog",           url: "https://www.emmanicolephotos.com/blog?utm_source=links-page&utm_medium=referral" },
+    { label: "Leave a review", url: "https://g.page/emma-nicole-photography/review?rc" },
+  ],
+
+  // Social icons shown at the bottom. Delete any line you don't use.
+  // Supported: facebook, instagram, pinterest, email, tiktok, youtube
+  socials: [
+    { type: "facebook",  url: "https://www.facebook.com/emmanicolephotog/" },
+    { type: "instagram", url: "https://www.instagram.com/emmanicolephotog" },
+    { type: "pinterest", url: "https://www.pinterest.com/emmanicolephotog/" },
+    { type: "email",     url: "mailto:Hello@emmanicolephotos.com" },
+  ],
+};
+</script>
+<!-- ================= end of editable section ================= -->
+
+<title>Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:  #f3eee6;
+    --ink:    #2e2a22;
+    --olive:  #5c5940;
+    --olive-deep: #4a4733;
+    --cream:  #f7f3ea;
+    --line:   #d8d0bf;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Karla", system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  /* faint botanical line-work in the background */
+  .branch {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .branch.left  { top: -40px; left: -70px; transform: rotate(12deg); }
+  .branch.right { bottom: -60px; right: -80px; transform: rotate(195deg); }
+
+  main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+    padding: 64px 24px 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cream);
+    box-shadow: 0 2px 14px rgba(46,42,34,0.14);
+    background: var(--line);
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    letter-spacing: 0.01em;
+    margin-top: 22px;
+    line-height: 1.1;
+  }
+
+  .tagline {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.22rem;
+    line-height: 1.45;
+    color: var(--olive-deep);
+    margin: 12px 0 8px;
+    max-width: 40ch;
+  }
+
+  .rule {
+    width: 56px;
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 20px 0 28px;
+  }
+
+  nav { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+
+  .link {
+    display: block;
+    background: var(--olive);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1.02rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 19px 20px;
+    border-radius: 2px;
+    transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .link:hover, .link:focus-visible {
+    background: var(--olive-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46,42,34,0.18);
+  }
+  .link:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  .socials {
+    display: flex;
+    gap: 26px;
+    margin-top: 40px;
+  }
+  .socials a { color: var(--ink); display: inline-flex; transition: color 0.15s ease, transform 0.15s ease; }
+  .socials a:hover, .socials a:focus-visible { color: var(--olive-deep); transform: translateY(-2px); }
+  .socials svg { width: 26px; height: 26px; }
+
+  footer {
+    margin-top: 44px;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a8271;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .link, .socials a { transition: none; }
+    .link:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg class="branch left" width="340" height="520" viewBox="0 0 340 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M170 10 C 150 140, 200 300, 160 510" stroke="#e6dfd0" stroke-width="2"/>
+  <path d="M168 90 C 130 80, 100 40, 95 15 M168 90 C 200 78, 225 50, 232 22" stroke="#e6dfd0" stroke-width="2"/>
+  <path d="M175 200 C 135 195, 105 160, 98 130 M175 200 C 212 190, 240 158, 246 128" stroke="#e6dfd0" stroke-width="2"/>
+  <path d="M167 320 C 128 318, 98 285, 90 255 M167 320 C 205 312, 234 280, 241 250" stroke="#e6dfd0" stroke-width="2"/>
+  <ellipse cx="112" cy="55" rx="10" ry="26" transform="rotate(-38 112 55)" fill="#ece5d6"/>
+  <ellipse cx="222" cy="60" rx="10" ry="26" transform="rotate(35 222 60)" fill="#ece5d6"/>
+  <ellipse cx="115" cy="168" rx="10" ry="26" transform="rotate(-40 115 168)" fill="#ece5d6"/>
+  <ellipse cx="230" cy="170" rx="10" ry="26" transform="rotate(38 230 170)" fill="#ece5d6"/>
+  <ellipse cx="108" cy="290" rx="10" ry="26" transform="rotate(-42 108 290)" fill="#ece5d6"/>
+  <ellipse cx="225" cy="288" rx="10" ry="26" transform="rotate(36 225 288)" fill="#ece5d6"/>
+</svg>
+<svg class="branch right" width="340" height="520" viewBox="0 0 340 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M170 10 C 150 140, 200 300, 160 510" stroke="#e6dfd0" stroke-width="2"/>
+  <path d="M168 90 C 130 80, 100 40, 95 15 M168 90 C 200 78, 225 50, 232 22" stroke="#e6dfd0" stroke-width="2"/>
+  <path d="M175 200 C 135 195, 105 160, 98 130 M175 200 C 212 190, 240 158, 246 128" stroke="#e6dfd0" stroke-width="2"/>
+  <ellipse cx="112" cy="55" rx="10" ry="26" transform="rotate(-38 112 55)" fill="#ece5d6"/>
+  <ellipse cx="222" cy="60" rx="10" ry="26" transform="rotate(35 222 60)" fill="#ece5d6"/>
+  <ellipse cx="115" cy="168" rx="10" ry="26" transform="rotate(-40 115 168)" fill="#ece5d6"/>
+</svg>
+
+<main>
+  <img class="photo" id="photo" alt="">
+  <h1 id="name"></h1>
+  <p class="tagline" id="tagline"></p>
+  <hr class="rule">
+  <nav id="links" aria-label="Links"></nav>
+  <div class="socials" id="socials"></div>
+  <footer id="footer"></footer>
+</main>
+
+<script>
+/* ---- rendering: no need to edit below this line ---- */
+const ICONS = {
+  facebook:  '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  pinterest: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.7 19.3c-.1-.8-.2-2 0-2.9l1.3-5.4s-.3-.6-.3-1.6c0-1.5.9-2.6 2-2.6.9 0 1.4.7 1.4 1.5 0 .9-.6 2.3-.9 3.6-.3 1.1.5 2 1.6 2 1.9 0 3.4-2 3.4-5 0-2.6-1.9-4.4-4.6-4.4-3.1 0-5 2.3-5 4.8 0 .9.4 1.9.8 2.5l.1.4-.3 1.3c-.1.2-.2.3-.4.2-1.4-.7-2.3-2.7-2.3-4.4 0-3.6 2.6-6.9 7.5-6.9 3.9 0 7 2.8 7 6.6 0 3.9-2.5 7.1-5.9 7.1-1.2 0-2.3-.6-2.6-1.3l-.7 2.8c-.3 1-.9 2.2-1.4 3A10 10 0 1 0 12 2Z"/></svg>',
+  email:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  tiktok:    '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.3 1.7 1.6 3.1 3.4 3.4v3a6.6 6.6 0 0 1-3.9-1.3v5.7A5.9 5.9 0 1 1 10 8v3.1a2.8 2.8 0 1 0 3 2.8V3h3.6Z"/></svg>',
+  youtube:   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.9 4.8 12 4.8 12 4.8s-5.9 0-7.6.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.7.4 7.6.4 7.6.4s5.9 0 7.6-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8ZM10 15.2V8.8l5.2 3.2L10 15.2Z"/></svg>',
+};
+
+document.title = PAGE.name;
+document.getElementById("name").textContent = PAGE.name;
+document.getElementById("tagline").textContent = PAGE.tagline;
+const photo = document.getElementById("photo");
+photo.src = PAGE.photo;
+photo.alt = PAGE.name;
+photo.onerror = () => { photo.style.display = "none"; };
+
+const nav = document.getElementById("links");
+for (const l of PAGE.links) {
+  const a = document.createElement("a");
+  a.className = "link";
+  a.href = l.url;
+  a.textContent = l.label;
+  nav.appendChild(a);
+}
+
+const soc = document.getElementById("socials");
+for (const s of PAGE.socials) {
+  if (!ICONS[s.type]) continue;
+  const a = document.createElement("a");
+  a.href = s.url;
+  a.setAttribute("aria-label", s.type);
+  a.innerHTML = ICONS[s.type];
+  soc.appendChild(a);
+}
+
+document.getElementById("footer").textContent = "© " + new Date().getFullYear() + " " + PAGE.name;
+</script>
+</body>
+</html>
